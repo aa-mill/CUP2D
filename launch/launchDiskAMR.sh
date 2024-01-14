@@ -50,13 +50,13 @@ BPDY=${BPDY:-8}        #number of blocks in y-side, at refinement level = 0
 #--------------------------------------
 RTOL=${RTOL:-5}                #grid is refined when curl(u) > Rtol (u: fluid velocity)
 CTOL=${CTOL:-0.01}             #grid is compressed when curl(u) < Ctol (u: fluid velocity)
-LEVELS=${LEVELS:-6}            #maximum number of refinement levels allowed
+LEVELS=${LEVELS:-8}            #maximum number of refinement levels allowed
 LEVELSSTART=${LEVELSSTART:-4}  #at t=0 the grid is uniform and at this refinement level. Must be strictly less than LEVELS.
 
 #--------------------------------------
 #Other settings
 #--------------------------------------
-NU=${NU:-0.0004} #fluid viscosity
+NU=${NU:-0.0000016} #fluid viscosity
 #The Reynolds number is defined as Re = XVEL * 2 * RADIUS / NU and can be controlled by
 #modifying the values of NU. Here are some examples:
 # Re=40    <-> NU=0.001
@@ -70,7 +70,7 @@ NU=${NU:-0.0004} #fluid viscosity
 #Timestep and file saving
 #--------------------------------------
 TDUMP=${TDUMP:-0.1}   #Save files for t = i*TDUMP, i=0,1,...
-TEND=${TEND:-10.}     #Perform simulation until t=TEND
+TEND=${TEND:-20.}     #Perform simulation until t=TEND
 CFL=${CFL:-0.45}      #Courant number: controls timestep size (should not exceed 1.0).
 VERBOSE=${VERBOSE:-0} #Set to 1 for more verbose screen output.
 

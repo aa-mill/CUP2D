@@ -97,7 +97,7 @@ cp ../makefiles/simulation ${FOLDERNAME}
 cd ${FOLDERNAME}
 
 PROCS=${NCPUSTR: -3}
-mpirun -n ${PROCS} ./simulation ${OPTIONS} -shapes "${OBJECTS}" | tee out.log
+srun -n $SLURM_NTASKS ./simulation ${OPTIONS} -restart 1 -shapes "${OBJECTS}" | tee out.log
 
 fi
 
